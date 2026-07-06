@@ -9,15 +9,17 @@ The first backend wraps Vercel's [`agent-browser`](https://github.com/vercel-lab
 From this repo:
 
 ```bash
+git clone https://github.com/sagardampba2022w/browser-goblin.git
+cd browser-goblin
 npm install
 agent-browser install
-pi -e ./pi-browser-tools
+pi -e .
 ```
 
 Or install the local package globally into Pi settings:
 
 ```bash
-pi install ./pi-browser-tools
+pi install .
 ```
 
 After publishing to npm, install by package name:

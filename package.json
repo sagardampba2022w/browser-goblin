@@ -1,6 +1,6 @@
 {
   "name": "browser-goblin",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "A Pi package that gives coding agents a browser goblin for testing, debugging, and visual QA tasks.",
   "type": "module",
   "keywords": [
@@ -13,6 +13,14 @@
     "agent-browser"
   ],
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sagardampba2022w/browser-goblin.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sagardampba2022w/browser-goblin/issues"
+  },
+  "homepage": "https://github.com/sagardampba2022w/browser-goblin#readme",
   "files": [
     "extensions",
     "skills",

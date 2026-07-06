@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.4.2 - 2026-07-06
+
+Release tag: `v0.4.2`
+
+- Updated GitHub repository metadata and README install examples after renaming the repo to `browser-goblin`.
+
 ## 0.4.1 - 2026-07-06
 
 Release tag: `v0.4.1`
