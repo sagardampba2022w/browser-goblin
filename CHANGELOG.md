@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.4.3 - 2026-07-06
+
+Release tag: `v0.4.3`
+
+- Corrected Pi npm install instructions to use `pi install npm:browser-goblin`.
+
 ## 0.4.2 - 2026-07-06
 
 Release tag: `v0.4.2`

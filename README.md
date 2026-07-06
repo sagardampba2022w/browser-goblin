@@ -22,10 +22,10 @@ Or install the local package globally into Pi settings:
 pi install .
 ```
 
-After publishing to npm, install by package name:
+After publishing to npm, install by package source:
 
 ```bash
-pi install browser-goblin
+pi install npm:browser-goblin
 ```
 
 ## Quick examples
