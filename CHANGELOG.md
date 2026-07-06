@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.4.8 - 2026-07-06
+
+Release tag: `v0.4.8`
+
+- Added GitHub Actions CI for type-checking, browser backend smoke tests, and npm package verification.
+- Added `CONTRIBUTING.md`, `SECURITY.md`, MIT `LICENSE`, pull request template, and issue templates.
+- Linked contribution and security guidance from the README.
+
 ## 0.4.7 - 2026-07-06
 
 Release tag: `v0.4.7`

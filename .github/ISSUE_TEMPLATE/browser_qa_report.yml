@@ -1,0 +1,37 @@
+name: Browser QA report
+description: Share browser_qa findings or a visual QA issue
+labels: [visual-qa]
+body:
+  - type: input
+    id: url
+    attributes:
+      label: URL tested
+      placeholder: "http://localhost:3000"
+    validations:
+      required: true
+  - type: textarea
+    id: command
+    attributes:
+      label: Command/tool used
+      placeholder: "/browser-qa http://localhost:3000 --headed"
+    validations:
+      required: true
+  - type: textarea
+    id: output
+    attributes:
+      label: QA output
+      description: Paste console/errors/network/vitals summary. Redact secrets.
+    validations:
+      required: true
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshot/artifact paths
+      description: Include local paths or uploaded images if safe to share.
+  - type: textarea
+    id: findings
+    attributes:
+      label: Findings
+      description: What visual, accessibility, network, console, or performance issue did you observe?
+    validations:
+      required: true

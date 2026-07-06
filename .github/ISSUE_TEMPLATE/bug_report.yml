@@ -1,0 +1,55 @@
+name: Bug report
+description: Report a browser-goblin bug
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a bug. Do not include tokens, cookies, private state files, or sensitive screenshots.
+  - type: input
+    id: version
+    attributes:
+      label: browser-goblin version
+      placeholder: "0.4.7"
+    validations:
+      required: true
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: What happened?
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Reproduction steps
+      placeholder: |
+        1. Install with `pi install npm:browser-goblin`
+        2. Run `/reload`
+        3. Run `/browser-qa http://localhost:3000 --headed`
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior / output
+      description: Paste relevant output. Redact secrets.
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      placeholder: |
+        OS:
+        Node:
+        npm:
+        Pi version:
+        agent-browser version:

@@ -1,0 +1,40 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Validate package
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Type-check extension
+        run: npm run check
+
+      - name: agent-browser doctor
+        run: npx agent-browser doctor --fix
+
+      - name: Smoke test browser backend
+        run: npm run test:smoke
+
+      - name: Verify npm package contents
+        run: npm pack --dry-run

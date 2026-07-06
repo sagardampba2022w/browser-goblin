@@ -244,3 +244,9 @@ Run a smoke test:
 ```bash
 npm run test:smoke
 ```
+
+## Contributing and security
+
+- See [CONTRIBUTING.md](./CONTRIBUTING.md) for local setup, validation, and release notes.
+- See [SECURITY.md](./SECURITY.md) for guidance on browser state, cookies, screenshots, and responsible disclosure.
+- browser-goblin controls a real browser. Review third-party packages before installing them and avoid sharing sensitive artifacts.
