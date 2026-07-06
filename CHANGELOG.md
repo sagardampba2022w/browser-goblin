@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.4.6 - 2026-07-06
+
+Release tag: `v0.4.6`
+
+- Clarified README attribution: browser-goblin uses Vercel Labs' `agent-browser` CLI as its backend and adds the Pi-native integration layer.
+
 ## 0.4.5 - 2026-07-06
 
 Release tag: `v0.4.5`
