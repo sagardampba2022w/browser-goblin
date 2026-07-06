@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.4.7 - 2026-07-06
+
+Release tag: `v0.4.7`
+
+- Reworked README positioning to better explain browser-goblin's agentic browser-use workflow: observe, reproduce, debug, patch, and verify.
+- Added concrete workflow examples for responsive QA, debugging, visual review, and support-grade bug reports.
+
 ## 0.4.6 - 2026-07-06
 
 Release tag: `v0.4.6`

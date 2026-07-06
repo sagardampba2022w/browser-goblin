@@ -2,11 +2,23 @@
 
 ![browser-goblin preview](./assets/preview.png)
 
-A Pi package that gives coding agents a browser goblin for coding, testing, debugging, authenticated flows, and visual QA.
+Give your coding agent eyes, hands, and a QA brain inside a real browser.
+
+`browser-goblin` lets Pi stop guessing from source code alone. It can open your app, click through user flows, read the accessibility tree, inspect console errors, catch failed network requests, measure Web Vitals, capture responsive screenshots, and leave behind clean artifacts you can review. It turns browser work into an agentic coding loop: **observe → reproduce → debug → patch → verify**.
+
+Use it when you want Pi to:
+
+- test local or deployed web apps like a real user
+- debug broken navigation, JavaScript errors, hydration issues, and failed API calls
+- run desktop/tablet/mobile visual QA in one command
+- inspect authenticated flows with reusable browser sessions
+- capture screenshots and artifact manifests without cluttering your repo
+- validate fixes instead of merely editing files and hoping
+- produce support-grade bug reports with repro steps, evidence, and browser health checks
 
 browser-goblin currently uses Vercel Labs' [`agent-browser`](https://github.com/vercel-labs/agent-browser) CLI as its browser automation backend. This package adds the Pi-native layer on top: tools, slash commands, skills, artifact management, persistent defaults, and visual-QA workflows.
 
-## Install during development
+## Install
 
 From this repo:
 
@@ -28,6 +40,34 @@ After publishing to npm, install by package source:
 
 ```bash
 pi install npm:browser-goblin
+```
+
+## Agentic workflows
+
+One-command responsive QA:
+
+```text
+/browser-qa http://localhost:3000 --headed
+```
+
+Pi opens the page, captures desktop/tablet/mobile screenshots, checks console errors, page errors, 4xx/5xx network requests, and Web Vitals, then reports artifact paths.
+
+Debug a broken flow:
+
+```text
+Open http://localhost:3000, reproduce the checkout bug, inspect console/network errors, patch the likely source files, then rerun the flow in the browser.
+```
+
+Visual review before shipping:
+
+```text
+Run browser_qa on the dashboard, inspect the mobile screenshot, fix spacing or hierarchy issues, and rerun the same QA pass.
+```
+
+Support and bug reports:
+
+```text
+Use browser-testing to reproduce the user's issue, collect screenshots/network evidence, and summarize exact repro steps plus validation results.
 ```
 
 ## Quick examples

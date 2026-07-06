@@ -1,6 +1,6 @@
 {
   "name": "browser-goblin",
-  "version": "0.4.6",
+  "version": "0.4.7",
   "description": "A Pi package that gives coding agents a browser goblin for testing, debugging, and visual QA tasks.",
   "type": "module",
   "keywords": [
