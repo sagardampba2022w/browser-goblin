@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.4.4 - 2026-07-06
+
+Release tag: `v0.4.4`
+
+- Fixed `agent-browser` binary resolution for npm-installed Pi packages when npm hoists dependencies to the shared `node_modules/.bin` directory.
+
 ## 0.4.3 - 2026-07-06
 
 Release tag: `v0.4.3`

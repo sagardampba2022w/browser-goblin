@@ -324,6 +324,9 @@ async function resolveAgentBrowserBin(): Promise<string> {
 	const candidates = [
 		resolve(PACKAGE_ROOT, "node_modules/.bin/agent-browser"),
 		resolve(PACKAGE_ROOT, "node_modules/.bin/agent-browser.cmd"),
+		// npm may hoist dependencies for installed Pi packages to the shared package root.
+		resolve(PACKAGE_ROOT, "../.bin/agent-browser"),
+		resolve(PACKAGE_ROOT, "../.bin/agent-browser.cmd"),
 	];
 	for (const candidate of candidates) {
 		try {
