@@ -380,7 +380,7 @@ function improveErrorMessage(text: string): string {
 		hints.push("Hint: the web server is not reachable. Check that the dev server is running and the port is correct.");
 	}
 	if (/command not found|ENOENT|not recognized/i.test(text)) {
-		hints.push("Hint: agent-browser was not found. Run `npm install` in pi-browser-tools or set PI_BROWSER_AGENT_BROWSER_BIN.");
+		hints.push("Hint: agent-browser was not found. Run `npm install` in the browser-goblin package directory or set PI_BROWSER_AGENT_BROWSER_BIN.");
 	}
 	if (/Target page, context or browser has been closed|browser.*closed|No browser/i.test(text)) {
 		hints.push("Hint: the browser session may be closed or crashed. Run browser_open again, or browser_close all sessions and retry.");
@@ -1418,7 +1418,7 @@ export default function piBrowserExtension(pi: ExtensionAPI) {
 	pi.registerTool({
 		name: "browser_artifacts_list",
 		label: "Browser Artifacts List",
-		description: "List screenshot and browser artifacts saved by pi-browser-tools.",
+		description: "List screenshot and browser artifacts saved by browser-goblin.",
 		parameters: BrowserArtifactsListParams,
 		async execute(_id, params, _signal, _onUpdate, ctx) {
 			const { root, files } = await collectArtifacts(ctx, {

@@ -1,6 +1,6 @@
-# pi-browser-tools
+# browser-goblin
 
-A Pi package that gives Pi browser-control tools for coding, testing, debugging, authenticated flows, and visual QA.
+A Pi package that gives coding agents a browser goblin for coding, testing, debugging, authenticated flows, and visual QA.
 
 The first backend wraps Vercel's [`agent-browser`](https://github.com/vercel-labs/agent-browser), which provides AI-friendly accessibility snapshots, browser sessions, screenshots, console/errors/network inspection, React introspection, and Web Vitals.
 
@@ -18,6 +18,12 @@ Or install the local package globally into Pi settings:
 
 ```bash
 pi install ./pi-browser-tools
+```
+
+After publishing to npm, install by package name:
+
+```bash
+pi install browser-goblin
 ```
 
 ## Quick examples

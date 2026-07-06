@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.4.1 - 2026-07-06
+
+Release tag: `v0.4.1`
+
+- Renamed npm package to `browser-goblin` because `pi-browser-tools` was already taken on npm.
+- Updated README and package metadata for npm publishing under the new name.
+
 ## 0.4.0 - 2026-07-06
 
 Release tag: `v0.4.0`

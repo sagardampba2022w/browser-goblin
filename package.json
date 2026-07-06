@@ -1,7 +1,7 @@
 {
-  "name": "pi-browser-tools",
-  "version": "0.4.0",
-  "description": "Pi package that gives Pi a browser for coding, testing, debugging, and visual QA tasks.",
+  "name": "browser-goblin",
+  "version": "0.4.1",
+  "description": "A Pi package that gives coding agents a browser goblin for testing, debugging, and visual QA tasks.",
   "type": "module",
   "keywords": [
     "pi-package",
