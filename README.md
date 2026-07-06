@@ -4,7 +4,7 @@
 
 A Pi package that gives coding agents a browser goblin for coding, testing, debugging, authenticated flows, and visual QA.
 
-The first backend wraps Vercel's [`agent-browser`](https://github.com/vercel-labs/agent-browser), which provides AI-friendly accessibility snapshots, browser sessions, screenshots, console/errors/network inspection, React introspection, and Web Vitals.
+browser-goblin currently uses Vercel Labs' [`agent-browser`](https://github.com/vercel-labs/agent-browser) CLI as its browser automation backend. This package adds the Pi-native layer on top: tools, slash commands, skills, artifact management, persistent defaults, and visual-QA workflows.
 
 ## Install during development
 
