@@ -1,0 +1,36 @@
+# Changelog
+
+## 0.4.0 - 2026-07-06
+
+Release tag: `v0.4.0`
+
+- Added persistent defaults in `~/.pi/agent/browser-tools.json` for headed mode, default session, default viewport, and artifact directory.
+- Added `/browser-config` for viewing/updating persistent browser defaults.
+- Added `browser_artifacts_latest` and `/browser-artifacts latest`.
+- Added artifact manifest metadata at `<artifact-session>/manifest.json`.
+- Added `browser_qa` and `/browser-qa` for one-command desktop/tablet/mobile visual QA with console/errors/network/vitals checks.
+- Added `browser_qa` usage examples to bundled testing, debugging, visual QA, and auth skills.
+
+## 0.3.0
+
+- Added `browser_artifacts_list` and `browser_artifacts_clean` tools.
+- Expanded `/browser-artifacts` command with `list`, `clean`, `--all`, and `--confirm` support.
+- `browser_artifacts_clean` defaults to dry run unless `confirm: true` is set.
+
+## 0.2.0
+
+- Added headed browser preference command: `/browser-headed on|off|auto`.
+- Added artifact directory management under `~/.pi/agent/browser-artifacts/<session>/` by default.
+- Added `/browser-artifacts` command to show the current artifact directory.
+- Added dedicated tools: `browser_console`, `browser_errors`, `browser_network`, `browser_tabs`, `browser_vitals`, `browser_set_viewport`, `browser_reload`, `browser_back`, and `browser_forward`.
+- Improved screenshots with automatic timestamped filenames when no path is provided.
+- Added viewport presets for desktop, tablet, and mobile.
+- Added snapshot retry for temporarily empty pages.
+- Added clearer hints for stale refs and unreachable dev servers.
+- Added localhost guidance when opening `0.0.0.0` URLs.
+- Added smoke test script.
+
+## 0.1.0
+
+- Initial Pi package with browser tools backed by `agent-browser`.
+- Added browser testing, debugging, visual QA, and auth skills.

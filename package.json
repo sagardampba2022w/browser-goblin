@@ -1,0 +1,55 @@
+{
+  "name": "pi-browser-tools",
+  "version": "0.4.0",
+  "description": "Pi package that gives Pi a browser for coding, testing, debugging, and visual QA tasks.",
+  "type": "module",
+  "keywords": [
+    "pi-package",
+    "pi",
+    "browser",
+    "browser-automation",
+    "playwright",
+    "testing",
+    "agent-browser"
+  ],
+  "license": "MIT",
+  "files": [
+    "extensions",
+    "skills",
+    "scripts/smoke-test.sh",
+    "README.md",
+    "CHANGELOG.md"
+  ],
+  "scripts": {
+    "check": "tsc --noEmit",
+    "pack:dry": "npm pack --dry-run",
+    "test:smoke": "bash scripts/smoke-test.sh"
+  },
+  "dependencies": {
+    "agent-browser": "latest"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.0",
+    "@types/node": "^22.0.0"
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-ai": "*",
+    "@earendil-works/pi-coding-agent": "*",
+    "@earendil-works/pi-tui": "*",
+    "typebox": "*"
+  },
+  "pi": {
+    "extensions": [
+      "./extensions/pi-browser/index.ts"
+    ],
+    "skills": [
+      "./skills"
+    ]
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
