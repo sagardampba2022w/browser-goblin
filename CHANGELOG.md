@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.4.5 - 2026-07-06
+
+Release tag: `v0.4.5`
+
+- Added a package preview image for README and pi.dev package gallery metadata.
+- Included `assets/preview.png` in the npm package and exposed it through `pi.image`.
+
 ## 0.4.4 - 2026-07-06
 
 Release tag: `v0.4.4`
