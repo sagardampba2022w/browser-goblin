@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.5.1 - 2026-10-25
+
+- Included `CONTRIBUTING.md` and `SECURITY.md` in the npm package so relative documentation links work on package-based viewers such as pi.dev.
+- Led the README with npm installation, Chrome setup, update/reload guidance, and links to the public package pages.
+- Clarified Pi-only compatibility, persistent user-level browser sessions, source-checkout-only development tests, and the screenshot tool's default artifact location.
+- Documented isolated source development and release verification without loading duplicate Goblin copies.
+- Added a package-content and Markdown-link check to prevent missing docs and image assets in future releases.
+- Replaced the promotional preview with a minimal Browser Goblin wordmark and matching geometric browser logo in charcoal, off-white, and muted green.
+- Added square SVG/PNG logos, an editable banner SVG, and a shared-mark renderer for consistent exports.
+- Included the brand assets in package checks; no browser runtime changes are included.
+
 ## 0.5.0 - 2026-10-25
 
 - Updated and pinned the browser backend from `agent-browser` 0.31.1 to 0.39.2.

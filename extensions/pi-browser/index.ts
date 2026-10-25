@@ -93,7 +93,7 @@ const BrowserWaitParams = Type.Object({
 
 const BrowserScreenshotParams = Type.Object({
 	...commonParams,
-	path: Type.Optional(Type.String({ description: "Output image path. If omitted, agent-browser writes to a temp file." })),
+	path: Type.Optional(Type.String({ description: "Output image path. If omitted, save under the configured browser artifact directory for this session." })),
 	full: Type.Optional(Type.Boolean({ description: "Capture full page." })),
 	annotate: Type.Optional(Type.Boolean({ description: "Annotate screenshot with element labels for visual QA." })),
 });

@@ -32,7 +32,9 @@ If a report includes sensitive details, create a minimal public issue asking for
 browser-goblin is designed with conservative defaults:
 
 - artifact cleanup is dry-run unless explicitly confirmed
-- auth/profile/state features require explicit paths or sessions
+- profile snapshots and explicit state-file imports require user-supplied paths
+- automatic cookie/storage restore is enabled by default for a worktree-scoped session; browser state is not necessarily fresh on each run
+- a custom `/browser-session` default persists at the user level and can share browser state across projects; prefer explicit, unique tool sessions for isolation
 - screenshots default to a global Pi artifact directory, not the current project repo
 - browser interaction should avoid destructive production actions unless explicitly requested
 

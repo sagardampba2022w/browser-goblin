@@ -4,7 +4,7 @@ Thanks for helping improve browser-goblin. This package gives Pi browser-use too
 
 ## Local setup
 
-Use Node.js 24 or newer, matching the backend requirement and CI.
+Use Pi and Node.js 24 or newer, matching the backend requirement and CI. The GitHub repository is the canonical source; npm releases are published from its tagged commits. Normal users should follow the npm installation instructions in [README.md](./README.md).
 
 ```bash
 git clone https://github.com/sagardampba2022w/browser-goblin.git
@@ -13,27 +13,25 @@ npm install
 npx --no-install agent-browser install
 ```
 
-Try the package locally with Pi:
+Try the source checkout in an isolated Pi run:
 
 ```bash
-pi -e .
+pi --no-extensions -e .
 ```
 
-Or install it globally from your local checkout:
-
-```bash
-pi install .
-```
+This loads the checkout without also loading a configured npm copy of Goblin or other discovered extensions. Do not register the checkout and the npm package at the same time. Keep your normal installation on `npm:browser-goblin` and use the command above for development.
 
 ## Development checks
 
-Run these before opening a pull request:
+Run these from the source checkout after `npm install`, before opening a pull request. These development checks are not intended to run from Pi's installed `node_modules` package.
 
 ```bash
 npm run check
+npm run check:package
 npm run test:smoke
-npm pack --dry-run
 ```
+
+`check:package` inspects npm's dry-run file list and fails if required docs or images are missing or a packaged Markdown file has a broken relative link. It does not publish anything.
 
 The smoke test starts its own local fixture and isolated browser session, exercises Goblin's wrapper tools, and removes its generated screenshots afterward. It does not use personal Chrome profiles or external websites.
 
@@ -43,6 +41,20 @@ For app-level dogfooding, run Pi and use:
 /browser-doctor
 /browser-qa http://localhost:3000 --headed
 ```
+
+## Brand assets
+
+- Square logo: [SVG](./assets/logo.svg) or [512px PNG](./assets/logo.png).
+- Package banner: [SVG](./assets/preview.svg) or [1200×630 PNG](./assets/preview.png).
+
+The editable mark is `assets/logo.svg`. The banner layout and typography live in `scripts/render-brand.mjs`; it embeds the same mark so both formats stay consistent. To regenerate the banner SVG and both PNG exports from the source checkout:
+
+```bash
+npm run assets:render
+npm run check:package
+```
+
+The renderer uses the installed browser backend and an isolated local session. No image service, personal browser profile, or additional rendering dependency is needed. The committed PNG exports are used for package previews to keep their appearance consistent across sites.
 
 ## Coding guidelines
 
@@ -68,18 +80,20 @@ browser-goblin can touch authenticated browser sessions, screenshots, cookies, l
 3. Run:
    ```bash
    npm run check
+   npm run check:package
    npm run test:smoke
-   npm pack --dry-run
    ```
 4. Commit and push.
-5. Create and push a matching git tag, e.g. `v0.4.8`.
+5. Create and push a git tag matching `package.json`, such as `v0.5.1`.
 6. Create a GitHub release.
-7. Publish to npm:
+7. Publish from that clean, tagged checkout in an interactive terminal:
    ```bash
-   npm publish --access public
+   npm publish --access public --tag latest
    ```
-8. Verify:
+   Complete npm's publish-time 2FA/passkey prompt. Logging in alone does not publish the package. Never put credentials or recovery codes in source control or release notes.
+8. Verify npm shows the new version (registry processing may take a few minutes), then update the installed Pi package:
    ```bash
-   npm dist-tag ls browser-goblin
-   pi install npm:browser-goblin
+   npm view browser-goblin@latest version
+   pi update npm:browser-goblin
    ```
+   For a first-time installation, use `pi install npm:browser-goblin` instead. Run `/reload` in Pi, check `/browser-doctor`, and test the npm-installed extension. Check the direct pi.dev package page and its documentation/image links; catalog search indexing may lag.

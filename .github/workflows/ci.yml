@@ -36,5 +36,5 @@ jobs:
       - name: Smoke test browser tools and backend
         run: npm run test:smoke
 
-      - name: Verify npm package contents
-        run: npm pack --dry-run
+      - name: Verify packaged documentation, images, and links
+        run: npm run check:package

@@ -1,6 +1,6 @@
 {
   "name": "browser-goblin",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "A Pi package that gives coding agents a browser goblin for testing, debugging, and visual QA tasks.",
   "type": "module",
   "keywords": [
@@ -24,14 +24,20 @@
   "files": [
     "extensions",
     "skills",
-    "assets/preview.png",
+    "assets",
     "scripts/smoke-test.sh",
     "scripts/smoke-test.mjs",
+    "scripts/check-package.mjs",
+    "scripts/render-brand.mjs",
     "README.md",
-    "CHANGELOG.md"
+    "CHANGELOG.md",
+    "CONTRIBUTING.md",
+    "SECURITY.md"
   ],
   "scripts": {
+    "assets:render": "node scripts/render-brand.mjs",
     "check": "tsc --noEmit",
+    "check:package": "node scripts/check-package.mjs",
     "pack:dry": "npm pack --dry-run",
     "test:smoke": "bash scripts/smoke-test.sh"
   },

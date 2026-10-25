@@ -14,8 +14,8 @@ Use authenticated browser state carefully. Treat cookies, localStorage, and stat
    - This is best for local development after a one-time login.
 
 2. Explicit session
-   - Use `/browser-session <id>` to set a default session for the current Pi run.
-   - Or pass `session` in each browser tool call.
+   - `/browser-session <id>` persists a user-level default across Pi runs and projects; it is not limited to the current run.
+   - Prefer passing `session` in each browser tool call when isolation is needed for one task. Use a unique session for unrelated accounts or projects.
 
 3. Chrome profile snapshot
    - `browser_open` supports `profile`, e.g. `Default`.

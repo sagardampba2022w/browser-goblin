@@ -1,6 +1,6 @@
 # browser-goblin
 
-![browser-goblin preview](./assets/preview.png)
+![Browser Goblin logo and wordmark. Browser testing for Pi.](./assets/preview.png)
 
 Give your coding agent eyes, hands, and a QA brain inside a real browser.
 
@@ -16,33 +16,45 @@ Use it when you want Pi to:
 - validate fixes instead of merely editing files and hoping
 - produce support-grade bug reports with repro steps, evidence, and browser health checks
 
-browser-goblin currently uses Vercel Labs' [`agent-browser`](https://github.com/vercel-labs/agent-browser) CLI as its browser automation backend. This package adds the Pi-native layer on top: tools, slash commands, skills, artifact management, persistent defaults, and visual-QA workflows.
+browser-goblin uses Vercel Labs' [`agent-browser`](https://github.com/vercel-labs/agent-browser) CLI as its browser automation backend. This package is **a Pi extension**, adding tools, slash commands, skills, artifact management, persistent defaults, and visual-QA workflows. The underlying CLI can be used by other harnesses, but this integration requires Pi.
+
+[GitHub source](https://github.com/sagardampba2022w/browser-goblin) · [npm package](https://www.npmjs.com/package/browser-goblin) · [Pi package page](https://pi.dev/packages/browser-goblin)
 
 ## Install
 
-Requires **Node.js 24 or newer**. The browser backend is pinned to `agent-browser` **0.39.2** so installs use the tested CLI version.
+Requires [Pi](https://pi.dev) and **Node.js 24 or newer**. The browser backend is pinned to `agent-browser` **0.39.2** so installs use the tested CLI version.
 
-From this repo:
-
-```bash
-git clone https://github.com/sagardampba2022w/browser-goblin.git
-cd browser-goblin
-npm install
-npx --no-install agent-browser install
-pi -e .
-```
-
-Or install the local package globally into Pi settings:
-
-```bash
-pi install .
-```
-
-After publishing to npm, install by package source:
+Install the published package from your terminal:
 
 ```bash
 pi install npm:browser-goblin
 ```
+
+Start Pi, or run `/reload` in an existing Pi session, then check the browser setup:
+
+```text
+/browser-doctor
+```
+
+The backend can use an existing supported Chrome installation. If diagnostics report that Chrome is missing, install it from your terminal using the matching backend version:
+
+```bash
+npx --yes agent-browser@0.39.2 install
+```
+
+On Linux, additional browser system libraries may be needed; the backend also supports `install --with-deps`. After setup, run `/browser-doctor` again in Pi.
+
+Only load one copy of Goblin: use the npm package for normal use, and an isolated source checkout for development. You do not need to clone the repository to use the published package. See [CONTRIBUTING.md](./CONTRIBUTING.md) for development setup.
+
+## Update
+
+Update only Goblin from your terminal:
+
+```bash
+pi update npm:browser-goblin
+```
+
+Then run `/reload` in Pi, or restart Pi, to load the updated extension. If you installed a pinned version such as `npm:browser-goblin@0.5.0`, install the desired newer version explicitly instead.
 
 ## Agentic workflows
 
@@ -233,6 +245,8 @@ Manage them with:
 /browser-config show
 ```
 
+These settings are saved at the user level and can affect future Pi runs and other projects. In particular, `/browser-session <session-id>` overrides the automatic worktree-scoped browser session. Prefer the tool's `session` parameter for a one-off task instead of changing that persistent default.
+
 Environment variables still win where supported.
 
 Set a custom agent-browser binary path if needed:
@@ -241,13 +255,17 @@ Set a custom agent-browser binary path if needed:
 export PI_BROWSER_AGENT_BROWSER_BIN=/path/to/agent-browser
 ```
 
-Run a smoke test against a local fixture (no external website or personal browser profile needed):
+## Development checks
+
+For contributors, run these **from a source checkout after installing development dependencies** as described in [CONTRIBUTING.md](./CONTRIBUTING.md). Do not run the development scripts from Pi's installed `node_modules` copy.
 
 ```bash
+npm run check
+npm run check:package
 npm run test:smoke
 ```
 
-The smoke test exercises Goblin's tools against the pinned backend, including forms, persistent refs, tabs, screenshots, and responsive QA.
+The smoke test starts a local fixture and exercises Goblin's tools against the pinned backend, including forms, persistent refs, tabs, screenshots, and responsive QA. No personal browser profile or external test website is needed. For an npm-installed extension, use `/browser-doctor` and the workflows above instead.
 
 ## Contributing and security
 
