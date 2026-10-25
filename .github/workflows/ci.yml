@@ -21,7 +21,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 24
           cache: npm
 
       - name: Install dependencies
@@ -33,7 +33,7 @@ jobs:
       - name: agent-browser doctor
         run: npx agent-browser doctor --fix
 
-      - name: Smoke test browser backend
+      - name: Smoke test browser tools and backend
         run: npm run test:smoke
 
       - name: Verify npm package contents

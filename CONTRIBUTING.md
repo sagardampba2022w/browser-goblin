@@ -4,11 +4,13 @@ Thanks for helping improve browser-goblin. This package gives Pi browser-use too
 
 ## Local setup
 
+Use Node.js 24 or newer, matching the backend requirement and CI.
+
 ```bash
 git clone https://github.com/sagardampba2022w/browser-goblin.git
 cd browser-goblin
 npm install
-agent-browser install
+npx --no-install agent-browser install
 ```
 
 Try the package locally with Pi:
@@ -32,6 +34,8 @@ npm run check
 npm run test:smoke
 npm pack --dry-run
 ```
+
+The smoke test starts its own local fixture and isolated browser session, exercises Goblin's wrapper tools, and removes its generated screenshots afterward. It does not use personal Chrome profiles or external websites.
 
 For app-level dogfooding, run Pi and use:
 

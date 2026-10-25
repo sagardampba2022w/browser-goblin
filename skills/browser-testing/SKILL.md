@@ -29,7 +29,7 @@ This captures screenshots, checks console/errors/network 4xx/5xx, and reports We
    - If React introspection is needed, set `enableReactDevtools: true` on first open.
 3. Inspect the page:
    - Use `browser_snapshot` first. Accessibility refs like `@e1` are preferred over CSS selectors.
-   - Re-snapshot after navigation or DOM changes; refs are only valid for the latest page state.
+   - Refs persist for surviving elements across same-document changes. Re-snapshot after navigation, element replacement, or ambiguous-ref errors.
 4. Interact:
    - Use `browser_click`, `browser_fill`, `browser_press`, and `browser_wait`.
    - After each meaningful action, use the fresh snapshot returned by the tool.

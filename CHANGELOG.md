@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.5.0 - 2026-10-25
+
+- Updated and pinned the browser backend from `agent-browser` 0.31.1 to 0.39.2.
+- Aligned the package requirement, setup instructions, and CI with Node.js 24+.
+- Updated snapshot-ref guidance for persistent same-document refs.
+- Replaced the external-site backend smoke test with local-fixture coverage of Goblin's wrapper tools.
+
 ## 0.4.8 - 2026-07-06
 
 Release tag: `v0.4.8`

@@ -1079,7 +1079,7 @@ export default function piBrowserExtension(pi: ExtensionAPI) {
 		description: "Capture an accessibility tree with stable element refs for browser interaction. Output is truncated if large.",
 		promptSnippet: "Capture the current page accessibility tree with refs like @e1 for precise interaction.",
 		promptGuidelines: [
-			"Use browser_snapshot after navigation or DOM changes because element refs are valid only for the latest page state.",
+			"Element refs persist for surviving elements across same-document changes. Take a fresh browser_snapshot after navigation, element replacement, or ambiguous-ref errors.",
 		],
 		parameters: BrowserSnapshotParams,
 		async execute(_id, params, signal, _onUpdate, ctx) {

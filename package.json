@@ -1,6 +1,6 @@
 {
   "name": "browser-goblin",
-  "version": "0.4.8",
+  "version": "0.5.0",
   "description": "A Pi package that gives coding agents a browser goblin for testing, debugging, and visual QA tasks.",
   "type": "module",
   "keywords": [
@@ -26,6 +26,7 @@
     "skills",
     "assets/preview.png",
     "scripts/smoke-test.sh",
+    "scripts/smoke-test.mjs",
     "README.md",
     "CHANGELOG.md"
   ],
@@ -35,7 +36,7 @@
     "test:smoke": "bash scripts/smoke-test.sh"
   },
   "dependencies": {
-    "agent-browser": "latest"
+    "agent-browser": "0.39.2"
   },
   "devDependencies": {
     "typescript": "^5.8.0",
@@ -57,7 +58,7 @@
     "image": "https://raw.githubusercontent.com/sagardampba2022w/browser-goblin/main/assets/preview.png"
   },
   "engines": {
-    "node": ">=20"
+    "node": ">=24.0.0"
   },
   "publishConfig": {
     "access": "public"

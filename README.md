@@ -20,13 +20,15 @@ browser-goblin currently uses Vercel Labs' [`agent-browser`](https://github.com/
 
 ## Install
 
+Requires **Node.js 24 or newer**. The browser backend is pinned to `agent-browser` **0.39.2** so installs use the tested CLI version.
+
 From this repo:
 
 ```bash
 git clone https://github.com/sagardampba2022w/browser-goblin.git
 cd browser-goblin
 npm install
-agent-browser install
+npx --no-install agent-browser install
 pi -e .
 ```
 
@@ -207,7 +209,7 @@ Bundled skills:
 ## Notes
 
 - Prefer `browser_snapshot` and refs like `@e3` over screenshots/selectors.
-- Re-snapshot after navigation or DOM changes; refs can become stale.
+- Refs persist for surviving elements across same-document changes. Take a fresh snapshot after navigation, element replacement, or ambiguous-ref errors.
 - Screenshots are for visual QA, canvas/charts/images, and layout issues.
 - Browser state defaults to a stable worktree-scoped session with `--restore`.
 - Prefer `http://localhost` over `http://0.0.0.0` when browser APIs, service workers, or cookies matter.
@@ -239,11 +241,13 @@ Set a custom agent-browser binary path if needed:
 export PI_BROWSER_AGENT_BROWSER_BIN=/path/to/agent-browser
 ```
 
-Run a smoke test:
+Run a smoke test against a local fixture (no external website or personal browser profile needed):
 
 ```bash
 npm run test:smoke
 ```
+
+The smoke test exercises Goblin's tools against the pinned backend, including forms, persistent refs, tabs, screenshots, and responsive QA.
 
 ## Contributing and security
 
